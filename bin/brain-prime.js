@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
+import isPrime from '../src/isPrime.js';
 
 console.log('Welcome to the Brain Games!');
 console.log('im worked');
@@ -12,7 +13,7 @@ while (count !== 3) {
   const number = Math.floor(Math.random() * 101);
   console.log(`Question: ${number}`);
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = number % 2 !== 0 ? 'yes' : 'no';
+  const correctAnswer = isPrime(number);
   if (answer !== 'yes' && answer !== 'no') {
     console.log(`'${answer}' is wrong answer ;C. Correct answer was '${correctAnswer}'. \nLet's try again, ${name}!`);
     break;
