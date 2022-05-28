@@ -8,12 +8,12 @@ console.log('Welcome to the Brain Games!');
 const name = greeting();
 
 let count = 0;
+console.log('What is the result of the expression?');
 while (count !== 3) {
   const mode = rndMode();
   const num1 = Math.floor(Math.random() * 101);
   const num2 = Math.floor(Math.random() * 101);
 
-  console.log('What is the result of the expression?');
   console.log(`Question: ${num1} ${mode} ${num2}`);
   const answer = readlineSync.question('Your answer: ');
   const correctAnswer = answerCheck(num1, num2, mode).toString();

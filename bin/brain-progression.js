@@ -1,20 +1,20 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-import answerCheckGcd from '../src/answerCheckGcd.js';
+import generateRndArray from '../src/generateRndArray.js';
 
 console.log('Welcome to the Brain Games!');
 const name = greeting();
 
 let count = 0;
-console.log('Find the greatest common divisor of given numbers.');
+console.log('What number is missing in the progression?.');
 while (count !== 3) {
-  const num1 = Math.floor(Math.random() * 101);
-  const num2 = Math.floor(Math.random() * 101);
-
-  console.log(`Question: ${num1} ${num2}`);
+  const line = generateRndArray(5, 10);
+  const position = Math.floor(Math.random() * line.length);
+  const correctAnswer = line[position];
+  line[position] = '..';
+  console.log(`Question: ${line.join(' ')}`);
   const answer = readlineSync.question('Your answer: ');
-  const correctAnswer = answerCheckGcd(num1, num2).toString();
   if (answer === correctAnswer) {
     console.log('Correct!');
     count += 1;
