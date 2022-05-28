@@ -25,5 +25,6 @@ while (count !== 3) {
   }
   if (count === 3) {
     console.log(`Congratulations, ${name}!`);
+    console.log('Just test');
   }
 }
