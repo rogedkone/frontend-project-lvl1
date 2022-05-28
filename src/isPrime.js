@@ -1,6 +1,6 @@
 const isPrime = (num) => {
-  for (let i = 2; i < num; i += 1) { if (num % i === 0) return false; }
-  return num > 1 ? 'yes' : 'no';
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) { if (num % i === 0) return 'no'; }
+  return 'yes';
 };
 
 export default isPrime;
