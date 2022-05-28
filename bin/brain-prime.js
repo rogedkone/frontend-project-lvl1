@@ -14,6 +14,7 @@ while (count !== 3) {
   const correctAnswer = number % 2 !== 0 ? 'yes' : 'no';
   if (answer !== 'yes' && answer !== 'no') {
     console.log(`'${answer}' is wrong answer ;C. Correct answer was '${correctAnswer}'`);
+    console.log(`Let's try again, ${name}`);
     break;
   }
   if (answer === correctAnswer) {
@@ -21,6 +22,7 @@ while (count !== 3) {
     count += 1;
   } else {
     console.log(`'${answer}' is wrong answer ;C. Correct answer was '${correctAnswer}'`);
+    console.log(`Let's try again, ${name}`);
     break;
   }
   if (count === 3) {
